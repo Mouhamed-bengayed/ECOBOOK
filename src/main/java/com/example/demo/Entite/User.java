@@ -22,7 +22,8 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private int number;
-
+    private Boolean blocked;
+    private boolean valid;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -52,4 +53,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

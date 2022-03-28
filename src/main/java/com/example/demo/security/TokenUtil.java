@@ -19,8 +19,6 @@ public class TokenUtil {
     //@Value("${auth.secret}")
     private String TOKEN_SECRET;
 
-
-
     public String generateToken(UserDetails userDetails) {
         //expration
         //sign

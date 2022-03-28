@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/user")
-
 public class UserController {
 
     @Autowired
@@ -22,9 +21,21 @@ public class UserController {
     public List<User> ListUser() {
         return userService.getAllUser();
     }
+
     @PostMapping("/add-user")
     public User adduser(@RequestBody @Valid User A1) {
         return userService.addUtilisateur(A1);
     }
+
+    @PutMapping("/validate-user/{idUser}")
+    public void validInscription(@PathVariable("idUser") Long idUser) {
+        userService.validInscription(idUser);
+    }
+    @DeleteMapping("/delete-user/{idUser}")
+    public void deleteAccount(@PathVariable("idUser") Long idUser) {
+        userService.deleteUser(idUser);
+    }
+
+
 
 }
