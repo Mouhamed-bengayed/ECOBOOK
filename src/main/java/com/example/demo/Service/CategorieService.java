@@ -6,6 +6,9 @@ import com.example.demo.Entite.Categorie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class CategorieService {
 
@@ -18,6 +21,19 @@ public class CategorieService {
         return savedCategory;
     }
 
+public List<Categorie> getAllCategory(){
+    categorieRepository.findAll();
+    return getAllCategory();
+}
 
+    public Categorie deleteCategory(Long id){
+        Optional<Categorie> categorie = categorieRepository.findById(id);
+        if(categorie.isPresent()){
+            return categorie.get();
+        }else
+        {
+            return null;
+        }
+    }
 
 }

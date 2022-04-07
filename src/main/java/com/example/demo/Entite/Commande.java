@@ -1,11 +1,10 @@
 package com.example.demo.Entite;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,6 +14,11 @@ public class Commande {
     private Long id;
     private String data;
     private Double prix;
+    @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Client client;
+    @OneToMany(mappedBy = "Commande")
+    private List<ListeCommande> listeCommande;
 
 
 

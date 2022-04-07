@@ -5,6 +5,7 @@ import com.example.demo.Entite.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,6 +15,7 @@ public class ArticleService {
 
     public Article addArticle(Article a1){
         Article savedArticle = articleRepository.save(a1);
+
         return savedArticle;
     }
 
@@ -25,5 +27,9 @@ public class ArticleService {
         {
             return null;
         }
+    }
+    public List<Article> gettAllArticle(){
+        articleRepository.findAll();
+return gettAllArticle();
     }
 }
