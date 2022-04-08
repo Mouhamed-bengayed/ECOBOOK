@@ -19,9 +19,9 @@ public class FirstTimeInitializer implements CommandLineRunner {
             logger.info("No Users accounts found. Creating sone users");
             User user1 = new User();
             userRepository.save(user1);
+
             //If no users exists, create save users
         }
-
 
     }
 }

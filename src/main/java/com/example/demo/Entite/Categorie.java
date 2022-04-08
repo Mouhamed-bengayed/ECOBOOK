@@ -14,7 +14,8 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nom;
-    @OneToMany(mappedBy = "Categorie")
+
+    @OneToMany(mappedBy = "categorie")
     private List<Article> article;
 
 }

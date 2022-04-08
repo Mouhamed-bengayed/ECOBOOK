@@ -15,9 +15,11 @@ public class Article implements Serializable {
     private Long id;
     private String titer;
     private Double prix;
+
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Categorie categorie;
+
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Level level;

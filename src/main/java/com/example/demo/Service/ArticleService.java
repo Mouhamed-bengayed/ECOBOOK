@@ -15,10 +15,8 @@ public class ArticleService {
 
     public Article addArticle(Article a1){
         Article savedArticle = articleRepository.save(a1);
-
         return savedArticle;
     }
-
     public Article deleteArticle(Long id){
         Optional<Article> article = articleRepository.findById(id);
         if(article.isPresent()){

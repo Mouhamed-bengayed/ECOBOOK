@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Client extends User {
 
-    @OneToMany(mappedBy = "Client")
+    @OneToMany(mappedBy = "client")
     private List<Commande> commande;
 
 }

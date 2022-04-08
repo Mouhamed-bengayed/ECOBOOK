@@ -11,6 +11,6 @@ public class Specialite {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToMany(mappedBy = "Level")
+    @OneToMany(mappedBy = "level")
     private List<Article> article;
 }

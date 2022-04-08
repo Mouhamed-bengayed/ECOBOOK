@@ -17,7 +17,7 @@ public class Commande {
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Client client;
-    @OneToMany(mappedBy = "Commande")
+    @OneToMany(mappedBy = "commande")
     private List<ListeCommande> listeCommande;
 
 
