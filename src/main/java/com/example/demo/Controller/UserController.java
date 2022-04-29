@@ -21,12 +21,10 @@ public class UserController {
     public List<User> ListUser() {
         return userService.getAllUser();
     }
-
     @PostMapping("/add-user")
     public User adduser(@RequestBody @Valid User A1) {
         return userService.addUtilisateur(A1);
     }
-
     @PutMapping("/validate-user/{idUser}")
     public void validInscription(@PathVariable("idUser") Long idUser) {
         userService.validInscription(idUser);
@@ -35,7 +33,5 @@ public class UserController {
     public void deleteAccount(@PathVariable("idUser") Long idUser) {
         userService.deleteUser(idUser);
     }
-
-
 
 }

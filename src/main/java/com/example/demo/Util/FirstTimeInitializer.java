@@ -6,7 +6,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FirstTimeInitializer implements CommandLineRunner {
 
     private final Log logger = LogFactory.getLog(FirstTimeInitializer.class);

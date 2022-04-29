@@ -19,7 +19,6 @@ public class Article implements Serializable {
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Categorie categorie;
-
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Level level;

@@ -5,13 +5,17 @@ import com.example.demo.dtos.JwtResponse;
 import com.example.demo.dtos.SignIn;
 import com.example.demo.security.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
+@RequestMapping("/api/Auth")
+@RestController
 public class AuthController {
     @Autowired
     TokenUtil tokenUtil;
@@ -20,6 +24,7 @@ public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
 
+    @PostMapping("/signIn/{signIn}")
     public JwtResponse signIn(@RequestBody SignIn signIn) {
         final Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(signIn.getEmail(), signIn.getPassword())
@@ -29,4 +34,5 @@ public class AuthController {
         String token = tokenUtil.generateToken(userDetails);
         JwtResponse jwtResponse=new JwtResponse(token);
         return jwtResponse;
-}}
+}
+}

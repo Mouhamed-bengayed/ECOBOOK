@@ -52,6 +52,7 @@ public class UserService implements UserDetailsService {
         User savedUser = userRepository.save(a1);
         return savedUser;
     }
+    
     public User deleteUser(Long id) {
         Optional<User> utilisateur = userRepository.findById(id);
         if (utilisateur.isPresent()) {
